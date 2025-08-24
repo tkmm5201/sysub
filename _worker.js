@@ -55,7 +55,7 @@ async function 整理优选列表(api) {
 
 	const timeout = setTimeout(() => {
 		controller.abort(); // 取消所有请求
-	}, 2000); // 2秒后触发
+	}, 10000); // 10秒后触发
 
 	try {
 		// 使用Promise.allSettled等待所有API请求完成，无论成功或失败
@@ -407,8 +407,8 @@ async function getLink(重新汇总所有链接) {
 		const controller = new AbortController(); // 创建一个AbortController实例，用于取消请求
 
 		const timeout = setTimeout(() => {
-			controller.abort(); // 2秒后取消所有请求
-		}, 2000);
+			controller.abort(); // 10秒后取消所有请求
+		}, 10000);
 
 		try {
 			// 使用Promise.allSettled等待所有API请求完成，无论成功或失败
@@ -1440,4 +1440,5 @@ async function subHtml(request) {
 			"content-type": "text/html;charset=UTF-8",
 		},
 	});
+
 }
